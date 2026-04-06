@@ -1,0 +1,4 @@
+novoCommit 
+aqui foi feito uma nova alteração sem fazer um branch
+*correção* commit na main e não na branch
+*correção* foi na main de novo* 
