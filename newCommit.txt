@@ -1,1 +1,2 @@
 novoCommit 
+aqui foi feito uma nova alteração sem fazer um branch
