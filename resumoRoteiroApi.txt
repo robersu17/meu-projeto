@@ -1,0 +1,93 @@
+📘 Resumo – Roteiro para Desenvolvimento de Web APIs REST
+
+O documento apresenta um guia prático para desenvolvimento de Web APIs REST em Java utilizando o Spring Framework e Spring Boot, destacando organização em camadas, injeção de dependências e integração com banco de dados.
+
+🧱 1. Modelo de Camadas
+
+A aplicação é organizada em camadas conforme suas responsabilidades:
+
+Apresentação: interação com o usuário
+Controle (Endpoints): recebe requisições HTTP e direciona ações
+Serviço (Regras de negócio): lógica da aplicação
+Modelo: estrutura dos dados (entidades)
+Persistência: acesso ao banco de dados
+
+📌 As camadas se comunicam de baixo para cima (persistência → serviço → controle).
+
+📌 O uso de interfaces reduz o acoplamento, permitindo maior flexibilidade.
+
+🔄 2. Injeção de Dependências
+
+O Spring Framework gerencia a criação dos objetos automaticamente.
+
+Usa Inversão de Controle (IoC)
+Classes dependem de interfaces, não de implementações
+O Spring injeta as implementações necessárias
+
+➡️ Isso torna o sistema mais modular e desacoplado.
+
+⚙️ 3. Tecnologias Utilizadas
+Maven: gerenciamento de dependências e build
+JAX-RS (Jersey): criação de APIs REST
+Spring Framework / Spring Boot: estrutura e automação
+MongoDB: banco de dados NoSQL
+Postman: testes de requisições
+
+📌 O Spring Boot simplifica a execução, pois já inclui servidor embutido.
+
+🏗️ 4. Estrutura do Projeto
+
+O projeto segue padrão Maven e inclui:
+
+Configuração no pom.xml (dependências e build)
+Classe principal (main) com @SpringBootApplication
+Classe de configuração do Jersey
+Organização em pacotes por camada
+🌐 5. Endpoints (Camada de Controle)
+Implementam a API REST
+Mapeiam requisições HTTP:
+GET (consulta)
+POST (criação)
+PUT (atualização)
+DELETE (remoção)
+
+📌 Usam anotações como:
+
+@GET, @POST
+@Consumes, @Produces
+
+📌 Comunicação com serviços via injeção de dependência
+
+🧠 6. Regras de Negócio (Service)
+Definidas por interfaces
+Implementadas por classes concretas
+Contêm a lógica da aplicação
+
+📌 Também utilizam injeção de dependência para acessar a persistência.
+
+💾 7. Persistência de Dados
+Utiliza MongoDB (NoSQL)
+Integração com Spring Data
+
+📌 Basta criar uma interface que herda de MongoRepository
+➡️ O Spring gera automaticamente as operações de banco
+
+▶️ 8. Execução do Projeto
+Build com Maven (clean package)
+Geração de arquivo executável
+Execução como aplicação Java (Spring Boot)
+🧪 9. Testes da API
+Realizados com o Postman
+Exemplos:
+POST → cadastrar dados
+GET → consultar dados
+✅ 10. Conclusão
+
+O roteiro mostra como desenvolver uma API REST com:
+
+Separação em camadas
+Baixo acoplamento
+Uso de injeção de dependências
+Integração simplificada com banco de dados
+
+📌 O Spring Boot facilita todo o processo, reduzindo configurações e permitindo foco na lógica da aplicação.
