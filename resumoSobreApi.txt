@@ -1,0 +1,10 @@
+📝 Resumo estilo prova (bem curto)
+REST APIs usam HTTP e JSON com endpoints.
+Arquitetura em camadas: Controle → Serviço → Persistência → Modelo.
+Endpoints tratam requisições (GET, POST, PUT, DELETE).
+Service contém regras de negócio (interface + implementação).
+Spring usa injeção de dependência (IoC) para reduzir acoplamento.
+Spring Boot facilita configuração e execução (servidor embutido).
+MongoDB + Spring Data simplificam persistência (MongoRepository).
+Maven gerencia dependências e build.
+Postman é usado para testar a API.
