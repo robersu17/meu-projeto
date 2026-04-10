@@ -1,0 +1,96 @@
+🧠 Mapa Mental – Web APIs REST com Spring
+🌐 Web API REST
+
+→ Comunicação via HTTP
+→ Usa JSON
+→ Baseada em endpoints
+
+🧱 Modelo em Camadas
+
+→ Apresentação
+
+Interface com usuário
+
+→ Controle (Endpoints)
+
+Recebe requisições HTTP
+Usa GET, POST, PUT, DELETE
+
+→ Serviço (Regras de Negócio)
+
+Lógica da aplicação
+Usa interfaces
+
+→ Modelo
+
+Estrutura dos dados (classes/entidades)
+
+→ Persistência
+
+Acesso ao banco de dados
+
+📌 Fluxo:
+Persistência → Serviço → Controle
+
+🔄 Injeção de Dependências (Spring)
+
+→ Baseado em IoC (Inversão de Controle)
+→ Usa interfaces (contrato)
+→ Spring cria objetos automaticamente
+
+📌 Vantagem:
+
+Baixo acoplamento
+Código mais flexível
+⚙️ Tecnologias
+
+→ Maven (build e dependências)
+→ Spring Framework (injeção de dependências)
+→ Spring Boot (facilidade e servidor embutido)
+→ JAX-RS / Jersey (API REST)
+→ MongoDB (NoSQL)
+→ Postman (testes)
+
+🌐 Endpoints
+
+→ Representam recursos da API
+→ Anotações:
+
+@GET
+@POST
+@PUT
+@DELETE
+
+→ Entrada/Saída:
+
+JSON
+🧠 Service (Regras de Negócio)
+
+→ Interface + implementação
+→ Contém lógica do sistema
+→ Usa repositório (persistência)
+
+💾 Persistência
+
+→ MongoDB
+→ Spring Data
+
+📌 Interface estende:
+
+MongoRepository
+
+➡️ Sem necessidade de implementação manual
+
+▶️ Execução
+
+→ Maven: clean package
+→ Gera executável
+→ Spring Boot roda como aplicação standalone
+
+🧪 Testes
+
+→ Postman
+→ Requisições:
+
+POST (cadastrar)
+GET (consultar)
