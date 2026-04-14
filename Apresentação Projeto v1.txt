@@ -1,0 +1,71 @@
+Apresentação do Projeto Visão Geral Sistema de Gerenciamento de Usuários com Web API + Interface Web
+    1. Estrutura do Projeto 
+    2. exemplo-webapiv2/ 
+    3. ├── src/main/ 
+    4. │         ├── java/br/edu/utfpr/td/tsi/exemplo/webpi/   ← Backend (Java) 
+    5. │         │   ├── Main.java 
+    6. │         │   ├── JerseyConfiguration.java 
+    7. │         │   ├── endpoint/ 
+    8. │         │   │   └── UserEndpoint.java 
+    9. │         │   └── modelo/ 
+    10. │         │          └── User.java 
+    11. │         └── resources/ 
+    12. │                └── static/                                                ← Frontend (HTML/JS) 
+    13. │                       ├── index.html   (Página principal) 
+    14. │                       ├── cadastro.html 
+    15. │           	  └── listagem.html 
+    16. │ 
+    17. └── pom.xml
+
+    1. Tecnologias Componente Servidor Framework Web API Frontend
+
+3. Backend - Classes Java
+User.java (Modelo)
+    • Representa o usuário com os campos: nome, email, idade
+    • Simples POJO com getters e setters
+UserEndpoint.java (API)
+    • POST /usuarios → Cadastra novo usuário
+    • GET /usuarios → Lista todos os usuários
+    • Armazenamento em memória (Lista estática)
+JerseyConfiguration.java
+    • Configura o caminho base: /exemplo-webapi
+    • Registra os endpoints e filtro CORS
+
+    1. Fluxo de Requisição Navegador (HTML/JS) ↓ fetch() Web API (/exemplo-webapi/usuarios) ↓ UserEndpoint.java ↓ Lista
+
+Apresentação do Projeto: Sistema de Gerenciamento de Usuários
+    1. O que é o projeto? É uma aplicação web completa para gerenciar dados de usuários, composta por:
+    • Uma Web API para/backend que processa dados
+    • Uma interface web (HTML/JavaScript) para o usuário interagir
+
+    1. Tecnologias utilizadas Camada	Tecnologia Servidor	Spring Boot com Tomcat embarcado API REST	JAX-RS (padrão Jakarta EE) Frontend	HTML5 e JavaScript puro (sem frameworks) Não foi utilizado banco de dados - os dados são armazenados em memória (lista Java).
+
+    1. Como funciona? Fluxo básico:
+    2. O usuário acessa a página web pelo navegador
+    3. A página envia uma requisição para a API
+    4. A API processa e retorna uma resposta
+    5. A página exibe o resultado
+
+    1. Estrutura de arquivos Backend (Java):
+    • User.java - Modelo com campos: nome, e-mail, idade
+    • UserEndpoint.java - Controlador com 2 endpoints:
+        ◦ POST /usuarios - Cadastra usuário
+        ◦ GET /usuarios - Lista usuários Frontend (HTML):
+    • index.html - Página inicial com botões de navegação
+    • cadastro.html - Formulário para cadastrar
+    • listagem.html - Tabela para listar
+
+    1. Caminho dos endpoints
+    • Base: http://localhost:8080/exemplo-webapi
+    • Cadastrar: POST /exemplo-webapi/usuarios
+    • Listar: GET /exemplo-webapi/usuarios
+
+    1. Por que usar Jakarta EE? O JAX-RS é o padrão Java para criar APIs REST. Permite criar endpoints de forma simples usando anotações como @GET, @POST, @Path, sem precisar de código boilerplate.
+
+Essa é a estrutura completa: API simples, armazenamento em memória, interface web limpa. Um projeto direto ao ponto que demonstra o conceito de Web API com integração frontend.
+
+"A API (backend) processa os dados e o frontend (HTML) exibe as camadas de interação com o usuário"
+Isso Resume bem a arquitetura:
+Camada	Responsabilidade
+Backend (API)	Processa dados (lógica, regras, armazenamento em memória)
+Frontend (HTML)	Interface com o usuário (telas, formulários, tabelas)
