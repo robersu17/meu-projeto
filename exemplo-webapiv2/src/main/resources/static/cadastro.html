@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            color: #555;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background: #5568d3;
+        }
+        .btn-voltar {
+            background: #666;
+            margin-top: 10px;
+        }
+        .btn-voltar:hover {
+            background: #555;
+        }
+        .mensagem {
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            text-align: center;
+            display: none;
+        }
+        .mensagem.sucesso {
+            background: #d4edda;
+            color: #155724;
+        }
+        .mensagem.erro {
+            background: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro de Usuário</h1>
+        <div id="mensagem" class="mensagem"></div>
+        <form id="formCadastro">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="idade">Idade:</label>
+                <input type="number" id="idade" name="idade" min="1" max="150" required>
+            </div>
+            <button type="submit" class="btn">Cadastrar</button>
+            <button type="button" class="btn btn-voltar" onclick="location.href='index.html'">Voltar</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('formCadastro').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const user = {
+                nome: document.getElementById('nome').value,
+                email: document.getElementById('email').value,
+                idade: parseInt(document.getElementById('idade').value)
+            };
+
+            try {
+                const response = await fetch('/exemplo-webapi/usuarios', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(user)
+                });
+
+                const mensagem = document.getElementById('mensagem');
+                
+                if (response.ok) {
+                    mensagem.textContent = 'Usuário cadastrado com sucesso!';
+                    mensagem.className = 'mensagem sucesso';
+                    mensagem.style.display = 'block';
+                    document.getElementById('formCadastro').reset();
+                    setTimeout(() => {
+                        location.href = 'listagem.html';
+                    }, 1500);
+                } else {
+                    throw new Error('Erro ao cadastrar');
+                }
+            } catch (error) {
+                const mensagem = document.getElementById('mensagem');
+                mensagem.textContent = 'Erro ao cadastrar usuário!';
+                mensagem.className = 'mensagem erro';
+                mensagem.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
