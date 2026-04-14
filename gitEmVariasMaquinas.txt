@@ -1,0 +1,57 @@
+🧠 Resumo – Git em múltiplas máquinas
+⚠️ Problema que aconteceu
+Você fez commits em máquinas diferentes sem sincronizar antes
+O Git bloqueou o push porque o remoto tinha mudanças que você não tinha localmente
+
+Erro:
+
+! [rejected] main -> main (fetch first)
+✅ Solução padrão
+
+Sempre que der esse erro:
+
+git pull origin main --rebase
+git push origin main
+🔄 Fluxo ideal (regra de ouro)
+👉 Antes de começar a trabalhar
+git pull --rebase
+👉 Depois de terminar
+git push
+💻 Seu cenário (3 máquinas)
+Casa / Trabalho
+Pode manter o repositório normal
+Fluxo:
+git pull --rebase
+# trabalha
+git add .
+git commit -m "..."
+git push
+Faculdade (máquina compartilhada)
+Você está fazendo certo ✅
+git clone <repo>
+cd <repo>
+🧠 O que faz o --rebase
+Sem rebase (merge):
+Cria um commit extra
+Histórico fica mais bagunçado
+Com rebase:
+Coloca seus commits “por cima” dos mais recentes
+Mantém histórico linear e limpo
+📊 Resumo simples
+merge → junta histórico (bagunça um pouco)
+rebase → reorganiza histórico (mais limpo)
+⚠️ Regra importante
+Pode usar rebase tranquilo trabalhando sozinho ✅
+Evite usar em commits já compartilhados com outras pessoas ⚠️
+💡 Dica final
+
+Ative rebase automático:
+
+git config --global pull.rebase true
+
+Assim você pode só usar:
+
+git pull
+🚀 Em uma frase
+
+👉 Sempre dê git pull antes de trabalhar e use --rebase pra manter o histórico limpo.
