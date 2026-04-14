@@ -1,0 +1,100 @@
+🧱 O que um portfólio backend/API precisa ter (mínimo)
+1. CRUD completo (obrigatório)
+
+Um projeto com:
+
+Create, Read, Update, Delete
+Banco de dados (ex: PostgreSQL, MongoDB)
+Estrutura organizada (controllers, services, etc.)
+
+👉 Exemplo:
+
+API de usuários / produtos / tarefas
+2. Autenticação e autorização
+
+Muito importante pra mostrar nível profissional:
+
+Login com JWT
+Hash de senha (bcrypt)
+Middleware de proteção de rotas
+
+👉 Isso já te coloca acima de muita gente.
+
+3. Integração com algo externo
+
+Mostra que você sabe lidar com o mundo real:
+
+API externa (pagamento, clima, etc.)
+Envio de e-mail
+Upload de arquivos (ex: S3 ou similar)
+4. Boas práticas
+
+Isso aqui diferencia júnior de alguém mais preparado:
+
+Validação de dados (ex: Joi, Zod)
+Tratamento de erros
+Código limpo e organizado
+Variáveis de ambiente (.env)
+5. Documentação (ESSENCIAL)
+
+Se não tiver isso, perde muito valor:
+
+README bem explicado:
+O que a API faz
+Como rodar
+Rotas principais
+Documentação com Swagger ou similar
+6. Testes (diferencial forte)
+Testes unitários ou de integração
+Não precisa ser 100%, mas mostrar que você sabe
+🧠 Sugestão de 3 projetos ideais
+🔹 Projeto 1 — API básica bem feita
+CRUD completo
+Autenticação
+Banco de dados
+Documentação
+
+👉 Exemplo: API de tarefas (To-do)
+
+🔹 Projeto 2 — API mais “real”
+Relacionamentos (ex: pedidos + usuários)
+Regras de negócio
+Paginação / filtros
+
+👉 Exemplo: mini e-commerce (backend)
+
+🔹 Projeto 3 — Integrações
+API externa OU fila OU cache
+Upload ou notificações
+
+👉 Exemplo:
+
+API que consome outra API
+Sistema com envio de e-mail
+Integração com pagamento (mock já serve)
+🚀 Extras que fazem você se destacar muito
+
+Se quiser subir o nível:
+
+Docker (muito valorizado)
+Deploy (ex: Render, Railway, VPS)
+CI/CD básico
+Cache com Redis
+Arquitetura mais avançada (MVC, Clean Architecture)
+⚠️ Erros comuns que você deve evitar
+10 projetos simples iguais (CRUD repetido)
+Código bagunçado sem padrão
+Sem README
+Projeto que não roda
+Sem autenticação em nenhum projeto
+🧩 Resumindo
+
+👉 Com 3 projetos bem feitos, contendo:
+
+CRUD
+Auth
+Banco de dados
+Documentação
+Pelo menos uma integração
+
+Você já tem um portfólio competitivo para vagas backend júnior.
